@@ -1,15 +1,13 @@
 package org.launchcode.techjobs.oo;
 
-import mockit.Expectations;
 import mockit.Mocked;
 import mockit.Tested;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 /**
  * Created by LaunchCode
