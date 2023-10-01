@@ -32,6 +32,52 @@ public class Job {
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
+
+    public String toString(){
+        String formattedJob = System.lineSeparator() +
+                "ID: " + this.getId() + '\n';
+
+        if (this.getName() == "") {
+            formattedJob += "Name: Data not available" + '\n';
+        } else {
+            formattedJob += "Name: " + this.getName() + '\n';
+        }
+
+        if (this.getEmployer().getValue() == "") {
+            formattedJob += "Employer: Data not available" + '\n';
+        } else {
+            formattedJob += "Employer: " + this.getEmployer() + '\n';
+        }
+
+        if (this.getLocation().getValue() == "") {
+            formattedJob += "Location: Data not available" + '\n';
+        } else {
+            formattedJob += "Location: " + this.getLocation() + '\n';
+        }
+
+        if (this.getPositionType().getValue() == "") {
+            formattedJob += "Position Type: Data not available" + '\n';
+        } else {
+            formattedJob += "Position Type: " + this.getPositionType() + '\n';
+        }
+
+        if (this.getCoreCompetency().getValue() == "") {
+            formattedJob += "Core Competency: Data not available" + '\n';
+        } else {
+            formattedJob += "Core Competency: " + this.getCoreCompetency() + '\n';
+        }
+
+        /* String formattedJob1 = System.lineSeparator() +
+                "ID: " + job.getId() + '\n' +
+                "Name: " + job.getName() + '\n' +
+                "Employer: " + job.getEmployer() + '\n' +
+                "Location: " + job.getLocation() + '\n' +
+                "Position Type: " + job.getPositionType() + '\n' +
+                "Core Competency: " + job.getCoreCompetency() +
+                System.lineSeparator(); */
+        return formattedJob;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

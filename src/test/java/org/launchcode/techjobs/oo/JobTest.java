@@ -36,6 +36,33 @@ public class JobTest {
         Job jobTestOne = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job jobTestTwo = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertFalse(jobTestOne.equals(jobTestTwo));
-
         }
+
+        @Test
+        public void testToStringStartsAndEndsWithNewLine() {
+        Job testToString = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String jobInfo = testToString.toString();
+        assertEquals('\n', jobInfo.charAt(0));
+        assertEquals('\n', jobInfo.charAt(jobInfo.length()-1));
+        };
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        Job testLabels = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String lablesAndData = testLabels.toString();
+        assertTrue(lablesAndData.contains("ID: " + testLabels.getId() + '\n'));
+        assertTrue(lablesAndData.contains("Name: " + testLabels.getName() + '\n'));
+        assertTrue(lablesAndData.contains("Employer: " + testLabels.getEmployer() + '\n'));
+        assertTrue(lablesAndData.contains("Location: " + testLabels.getLocation() + '\n'));
+        assertTrue(lablesAndData.contains("Position Type: " + testLabels.getPositionType() + '\n'));
+        assertTrue(lablesAndData.contains("Core Competency: " + testLabels.getCoreCompetency() + '\n'));
     }
+
+   @Test
+    public void testToStringHandlesEmptyField(){
+       Job testEmptyFields = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+       String lablesAndData = testEmptyFields.toString();
+       assertTrue(lablesAndData.contains("Employer: Data not available"));
+    }
+}
+

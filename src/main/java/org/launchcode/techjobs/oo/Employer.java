@@ -2,9 +2,10 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Employer {
+public class Employer extends JobField {
 
-    private int id;
+    //only commenting out to show progress, if I wanted it to be super DRY I would delete this in all the classes
+  /*  private int id;
     private static int nextId = 1;
     private String value;
 
@@ -16,6 +17,10 @@ public class Employer {
     public Employer(String value) {
         this();
         this.value = value;
+    } */
+
+    public Employer(String value) {
+        super(value);
     }
 
     // Custom toString, equals, and hashCode methods:
@@ -40,7 +45,7 @@ public class Employer {
 
     // Getters and Setters:
 
-    public int getId() {
+    /* public int getId() {
         return id;
     }
 
@@ -50,6 +55,6 @@ public class Employer {
 
     public void setValue(String value) {
         this.value = value;
-    }
+    } */
 
 }
